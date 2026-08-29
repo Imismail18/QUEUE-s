@@ -1,18 +1,34 @@
+"""
+Structure of comments:
+Function description.
+Time complexity O()
+"""
+
+#Queue Node class - Represents a single node in the Queue data structure.
 class Node:
+    #Initializes the node with data and a reference to the next node.
+    #Time complexity: O(1)
     def __init__(self, data):
         self.data = data
         self.next = None
-
-
+        
+#Queue class - Implements a queue data structure using a linked list.
+#FIFO (First In First Out) principle: elements are added at rear and removed from front.
 class Queue:
+    #Initializes an empty queue with front and rear pointers set to None and size counter set to 0.
+    #Time complexity: O(1)
     def __init__(self):
         self.front = None
         self.rear = None
         self.size = 0
 
+    #Returns the number of elements currently in the queue.
+    #Time complexity: O(1)
     def __len__(self):
         return self.size
 
+    #Returns a string representation of the queue showing all elements from front to rear.
+    #Time complexity: O(n), where n is the number of elements in the queue.
     def __repr__(self):
         items = []
 
@@ -22,6 +38,8 @@ class Queue:
             curr = curr.next
         return "->".join(items)
 
+    #Adds an element to the rear of the queue.
+    #Time complexity: O(1)
     def enqueue(self, data):
         new_node = Node(data)
 
@@ -34,6 +52,8 @@ class Queue:
             self.rear = new_node
             self.size += 1
 
+    #Removes and returns the element at the front of the queue. Raises IndexError if queue is empty.
+    #Time complexity: O(1)
     def dequeue(self):
         if self.is_empty(): raise IndexError("Empty Queue!")
 
@@ -45,15 +65,20 @@ class Queue:
         self.size -= 1
         return dequeue_value
 
+    #Returns the element at the front of the queue without removing it. Raises IndexError if queue is empty.
+    #Time complexity: O(1)
     def peek(self):
         if self.is_empty(): raise IndexError("Empty Queue!")
         return self.front.data
 
+    #Checks if the queue is empty. Returns True if empty, False otherwise.
+    #Time complexity: O(1)
     def is_empty(self):
         return self.front is None and self.rear is None
 
 
 if __name__ == "__main__":
+    print("==" * 30, "\nQueue data structure:\nBeginning:\n", "__" * 30)
     queue = Queue()
 
     queue.enqueue(10)
@@ -62,15 +87,13 @@ if __name__ == "__main__":
     queue.enqueue(13)
     queue.enqueue(14)
 
+    print()
     print(queue)
-    print()
     print(len(queue))
-    print()
     print(queue.peek())
-    print()
 
     queue.dequeue()
 
     print(queue)
-    print()
     print(queue.is_empty())
+    print("==" * 30, "\nQueue data structure - End\n")
