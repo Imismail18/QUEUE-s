@@ -37,6 +37,7 @@ class Queue:
         while curr is not None:
             items.append(str(curr.data))
             curr = curr.next
+        items.append("None")
         return "->".join(items)
 
     #Adds an element to the rear of the queue.
