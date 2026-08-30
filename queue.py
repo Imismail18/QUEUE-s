@@ -30,6 +30,7 @@ class Queue:
     #Returns a string representation of the queue showing all elements from front to rear.
     #Time complexity: O(n), where n is the number of elements in the queue.
     def __repr__(self):
+        if self.is_empty(): return "[]"
         items = []
 
         curr = self.front
@@ -77,23 +78,23 @@ class Queue:
         return self.front is None and self.rear is None
 
 
-if __name__ == "__main__":
-    print("==" * 30, "\nQueue data structure:\nBeginning:\n", "__" * 30)
-    queue = Queue()
+# if __name__ == "__main__":
+#     print("==" * 30, "\nQueue data structure:\nBeginning:\n", "__" * 30)
+#     queue = Queue()
 
-    queue.enqueue(10)
-    queue.enqueue(11)
-    queue.enqueue(12)
-    queue.enqueue(13)
-    queue.enqueue(14)
+#     queue.enqueue(10)
+#     queue.enqueue(11)
+#     queue.enqueue(12)
+#     queue.enqueue(13)
+#     queue.enqueue(14)
 
-    print()
-    print(queue)
-    print(len(queue))
-    print(queue.peek())
+#     print()
+#     print(queue)
+#     print(len(queue))
+#     print(queue.peek())
 
-    queue.dequeue()
+#     queue.dequeue()
 
-    print(queue)
-    print(queue.is_empty())
-    print("==" * 30, "\nQueue data structure - End\n")
+#     print(queue)
+#     print(queue.is_empty())
+#     print("==" * 30, "\nQueue data structure - End\n")
