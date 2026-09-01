@@ -66,6 +66,10 @@ print(q)           # 20->30
 - This queue is implemented with a singly linked list, not with Python's built-in list type.
 - When the queue becomes empty after a dequeue, the `rear` pointer is reset to `None`.
 
+## Contributing
+
+Contributions are welcome! Feel free to submit issues and pull requests.
+
 ## Author
 
 Ismail - [@Imismail18](https://github.com/Imismail18)
