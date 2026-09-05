@@ -67,9 +67,9 @@ print(q)           # 20->30
 ## Project Structure
 
 ```text
-Stack/
-├── queue.py
-├── README.md
+📂 Queue/
+├── 📄 queue.py
+├── 📄 README.md
 ```
 
 ## Notes
