@@ -24,6 +24,7 @@ The implementation uses internal `Node` objects and maintains `front`, `rear`, a
 - `len()` to get the current queue size
 - `is_empty()` to check whether the queue is empty
 - string output via `__repr__` showing the queue as `a->b->c`
+- looping throgh the items via `__iter__`
 
 ## Queue Methods
 
@@ -33,6 +34,7 @@ The implementation uses internal `Node` objects and maintains `front`, `rear`, a
 - `is_empty()`: returns `True` if the queue is empty, otherwise `False`
 - `__len__()`: returns the current number of elements
 - `__repr__()`: returns a readable representation of the queue
+- `__iter__()`: inables looping the queue items
 
 ## Example
 
@@ -60,6 +62,15 @@ print(q)           # 20->30
 - `is_empty`: O(1)
 - `__len__`: O(1)
 - `__repr__`: O(n)
+- `__iter__`: O(n)
+
+## Project Structure
+
+```text
+Stack/
+├── queue.py
+├── README.md
+```
 
 ## Notes
 
