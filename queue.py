@@ -24,13 +24,24 @@ class Queue:
 
     #Returns the number of elements currently in the queue.
     #Time complexity: O(1)
-    def __len__(self):
-        return self.size
+    def __len__(self): return self.size
+
+    #loops throgh the queue items and return the items to be iterited later if needed. note that the items are in string format.
+    #Time complexity: O(n)
+    def __iter__(self):
+        items = []
+
+        curr = self.front
+        while curr is not None:
+            items.append(str(curr.data)
+            curr = curr.next
+        return items
 
     #Returns a string representation of the queue showing all elements from front to rear.
     #Time complexity: O(n), where n is the number of elements in the queue.
     def __repr__(self):
         if self.is_empty(): return "[]"
+            
         items = []
 
         curr = self.front
@@ -38,6 +49,7 @@ class Queue:
             items.append(str(curr.data))
             curr = curr.next
         items.append("None")
+        
         return "->".join(items)
 
     #Adds an element to the rear of the queue.
@@ -65,37 +77,41 @@ class Queue:
         if self.is_empty(): self.rear = None
 
         self.size -= 1
+        
         return dequeue_value
 
     #Returns the element at the front of the queue without removing it. Raises IndexError if queue is empty.
     #Time complexity: O(1)
     def peek(self):
         if self.is_empty(): raise IndexError("Empty Queue!")
+            
         return self.front.data
 
     #Checks if the queue is empty. Returns True if empty, False otherwise.
     #Time complexity: O(1)
-    def is_empty(self):
-        return self.front is None and self.rear is None
+    def is_empty(self): return self.front is None and self.rear is None
 
 
-# if __name__ == "__main__":
-#     print("==" * 30, "\nQueue data structure:\nBeginning:\n", "__" * 30)
-#     queue = Queue()
+if __name__ == "__main__":
+    print("==" * 30, "\nQueue data structure:\nBeginning:\n", "__" * 30)
+    queue = Queue()
 
-#     queue.enqueue(10)
-#     queue.enqueue(11)
-#     queue.enqueue(12)
-#     queue.enqueue(13)
-#     queue.enqueue(14)
+    queue.enqueue(10)
+    queue.enqueue(11)
+    queue.enqueue(12)
+    queue.enqueue(13)
+    queue.enqueue(14)
 
-#     print()
-#     print(queue)
-#     print(len(queue))
-#     print(queue.peek())
+    print()
+    print(queue)
+    print(len(queue))
+    print(queue.peek())
 
-#     queue.dequeue()
+    queue.dequeue()
 
-#     print(queue)
-#     print(queue.is_empty())
-#     print("==" * 30, "\nQueue data structure - End\n")
+    print(queue)
+    print(queue.is_empty())
+
+    for i in queue: print(i)
+        
+    print("==" * 30, "\nQueue data structure - End\n")
